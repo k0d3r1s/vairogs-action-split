@@ -13,6 +13,4 @@ WORKDIR /tmp
 
 ADD https://raw.githubusercontent.com/vairogs/vairogs/master/deploy/components.json /tmp/components.json
 
-ENV GIT_SSL_NO_VERIFY=true
-
 ENTRYPOINT ["/entrypoint.sh"]
