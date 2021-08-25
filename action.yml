@@ -1,0 +1,6 @@
+# action.yml
+name: 'Vairogs Deploy'
+description: 'Split vairogs/vairogs to multiple repositories'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
