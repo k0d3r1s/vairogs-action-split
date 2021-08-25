@@ -15,7 +15,7 @@ typeset -A components
 
 while IFS== read -r path repo; do
     components["$path"]="$repo"
-done < <(jq -r '.[] | .path + "=" + .repo ' components.json)
+done < <(jq -r '.[] | .path + "=" + .repo ' /tmp/components.json)
 
 for K in "${!components[@]}"; do
     echo -e "\n${components[$K]}\n"
