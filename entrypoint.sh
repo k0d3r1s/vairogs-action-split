@@ -18,8 +18,7 @@ while IFS== read -r path repo; do
 done < <(jq -r '.[] | .path + "=" + .repo ' /tmp/components.json)
 
 for K in "${!components[@]}"; do
-    temp_remote=${components[$K]//GH@/${GH_TOKEN}@}
-    echo -e "\n${temp_remote}\n"
+    echo -e "\n${components[$K]}\n"
     # The rest shouldn't need changing.
     temp_repo=$(mktemp -d)
     # shellcheck disable=SC2002
@@ -34,7 +33,7 @@ for K in "${!components[@]}"; do
 
     sha1=$(splitsh-lite --prefix="${K}" --quiet)
     git reset --hard "${sha1}"
-    git remote add remote "${temp_remote}"
+    git remote add remote "${components[$K]}"
     git push -u remote "${temp_branch}":"${source_branch}" --force
     git remote rm remote
 
