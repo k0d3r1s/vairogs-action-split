@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 ADD https://github.com/splitsh/lite/releases/download/v1.0.1/lite_linux_amd64.tar.gz /tmp
 RUN tar -zxpf /tmp/lite_linux_amd64.tar.gz --directory /usr/local/bin/
 
-RUN apt-get update && apt-get install -y git jq
+RUN apt-get update && apt-get install -y git jq wget
 
 COPY entrypoint.sh /entrypoint.sh
 
