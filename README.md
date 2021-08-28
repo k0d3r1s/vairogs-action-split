@@ -19,7 +19,7 @@ jobs:
         id: branch
       - name: Split
         id: split
-        uses: vairogs/deploy-action@master
+        uses: vairogs/action-split@master
         env:
           BRANCH: ${{ steps.branch.outputs.branch }}
           REPO: ${{ github.repository }}
