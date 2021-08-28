@@ -1,7 +1,6 @@
 #!/bin/bash
 
 set -eu
-ARG1=master
 
 command -v splitsh-lite >/dev/null 2>&1 || {
     echo "$0 requires splitsh-lite but it's not installed.  Aborting." >&2
@@ -9,7 +8,7 @@ command -v splitsh-lite >/dev/null 2>&1 || {
 }
 
 source_repository=https://github.com/vairogs/vairogs.git
-source_branch=$ARG1
+source_branch=master
 
 typeset -A components
 
