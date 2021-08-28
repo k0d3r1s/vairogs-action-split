@@ -23,7 +23,7 @@ for K in "${!components[@]}"; do
     # The rest shouldn't need changing.
     temp_repo=$(mktemp -d)
     # shellcheck disable=SC2002
-    temp_branch=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w "${1:-8}" | head -n 1)
+    temp_branch=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 8 ; echo '')
 
     # Checkout the old repository, make it safe and checkout a temp branch
     git clone ${source_repository} "${temp_repo}"
@@ -32,7 +32,7 @@ for K in "${!components[@]}"; do
     git remote remove origin
     git checkout -b "${temp_branch}"
 
-    sha1=$(splitsh-lite --prefix="${K}" --quiet)
+    sha1=$(splitsh-lite --prefix="${K}" 2>/dev/null)
     git reset --hard "${sha1}"
     git remote add remote "${temp_remote}"
     git push -u remote "${temp_branch}":"${source_branch}" --force

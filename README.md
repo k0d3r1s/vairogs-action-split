@@ -4,4 +4,4 @@ Action to split vairogs/vairogs into multiple repositories
 
 ## Example usage
 
-uses: vairogs/deploy-action@v1.0.3
+uses: vairogs/deploy-action@v1.0.8
