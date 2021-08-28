@@ -17,9 +17,9 @@ jobs:
         shell: bash
         run: echo "::set-output name=branch::${GITHUB_REF#refs/heads/}"
         id: branch
-      - name: Split
+      - name: Split monorepo
         id: split
-        uses: vairogs/action-split@master
+        uses: docker://k0d3r1s/action:split--latest
         env:
           BRANCH: ${{ steps.branch.outputs.branch }}
           REPO: ${{ github.repository }}
