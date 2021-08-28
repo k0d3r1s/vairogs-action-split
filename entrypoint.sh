@@ -7,10 +7,12 @@ command -v splitsh-lite >/dev/null 2>&1 || {
     exit 1
 }
 
-source_repository=https://github.com/vairogs/vairogs.git
-source_branch=master
+source_repository=https://github.com/${REPO}.git
+source_branch=${BRANCH}
 
 typeset -A components
+
+wget ${COMPONENTS_URL} -O /tmp/components.json
 
 while IFS== read -r path repo; do
     components["$path"]="$repo"

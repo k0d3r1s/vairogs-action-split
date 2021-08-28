@@ -14,8 +14,7 @@ RUN \
 &&  cd /root/go/src/github.com/splitsh/lite \
 &&  go build -o splitsh-lite github.com/splitsh/lite \
 &&  cp /root/go/src/github.com/splitsh/lite/splitsh-lite /usr/local/bin \
-&&  chmod +x /usr/local/bin/splitsh-lite \
-&&  wget https://raw.githubusercontent.com/vairogs/vairogs/master/.github/deploy/components.json -O /tmp/components.json
+&&  chmod +x /usr/local/bin/splitsh-lite
 
 COPY entrypoint.sh /entrypoint.sh
 
