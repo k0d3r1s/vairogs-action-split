@@ -20,6 +20,6 @@ COPY entrypoint.sh /entrypoint.sh
 
 WORKDIR /tmp
 
-RUN wget https://raw.githubusercontent.com/vairogs/vairogs/master/deploy/components.json -O /tmp/components.json
+RUN wget https://raw.githubusercontent.com/vairogs/vairogs/master/.github/deploy/components.json -O /tmp/components.json
 
 ENTRYPOINT ["/entrypoint.sh"]
