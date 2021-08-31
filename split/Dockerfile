@@ -22,7 +22,7 @@ RUN \
 &&  go build -o splitsh-lite github.com/splitsh/lite \
 &&  cp /root/go/src/github.com/splitsh/lite/splitsh-lite /usr/local/bin \
 &&  chmod +x /usr/local/bin/splitsh-lite \
-&&  apt-get remove -y make cmake gcc pkg-config \
+&&  apt-get purge -y make cmake gcc pkg-config \
 &&  apt-get autoremove -y \
 &&  rm -rf /var/lib/apt/lists/* \
     /usr/share/doc/ \
