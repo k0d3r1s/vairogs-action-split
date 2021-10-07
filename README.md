@@ -24,10 +24,10 @@ jobs:
           BRANCH: ${{ steps.branch.outputs.branch }}
           REPO: ${{ github.repository }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }} # GitHub PA Token
-          COMPONENTS_URL: ${{ secrets.COMPONENTS_URL }} # URL location of component list
+          COMPONENTS_URL: https://raw.githubusercontent.com/k0d3r1s/vairogs-action-split/master/components.json # URL location of component list
 ```
 ___
-## Example component list content
+## Example component.json list content
 ```json
 [
     {
