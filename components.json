@@ -1,0 +1,10 @@
+[
+    {
+        "path": "src/Vairogs/Addon",
+        "repo": "https://GH_TOKEN@github.com/vairogs/addon.git"
+    },
+    {
+        "path": "src/Vairogs/Addon/Auth",
+        "repo": "https://GH_TOKEN@github.com/vairogs/addon-auth.git"
+    }
+]
