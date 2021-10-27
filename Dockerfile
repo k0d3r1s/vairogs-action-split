@@ -3,7 +3,7 @@ FROM debian:stretch-backports
 ENV DEBIAN_FRONTEND=noninteractive
 
 COPY 01_nodoc /etc/dpkg/dpkg.cfg.d/01_nodoc
-COPY 02nocache /etc/apt/apt.conf.d/02nocache
+COPY 02_nocache /etc/apt/apt.conf.d/02_nocache
 COPY compress /etc/initramfs-tools/conf.d/compress
 COPY entrypoint.sh /entrypoint.sh
 
