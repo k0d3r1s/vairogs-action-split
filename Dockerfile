@@ -1,4 +1,4 @@
-FROM debian:stretch-backports
+FROM debian:buster-backports
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -9,9 +9,9 @@ COPY entrypoint.sh /entrypoint.sh
 
 RUN \
     apt-get update \
-&&  apt-get install -y --no-install-recommends wget golang-go=2:1.11~1~bpo9+1 golang-src=2:1.11~1~bpo9+1 zip unzip git libgit2-27 libgit2-dev make cmake jq \
+&&  apt-get install -y --no-install-recommends wget golang-1.13-go=1.13.6-2~bpo10+1 golang-1.13-src=1.13.6-2~bpo10+1 golang-1.13=1.13.6-2~bpo10+1 zip unzip git libgit2-27 libgit2-dev make cmake jq \
     ca-certificates openssl gcc pkg-config \
-&&  export GOPATH=/root/go \
+&&  export PATH=$PATH:/usr/lib/go-1.13/bin \
 &&  go get -d github.com/libgit2/git2go \
 &&  cd /root/go/src/github.com/libgit2/git2go \
 &&  git checkout next \
